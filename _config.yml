@@ -1,0 +1,4 @@
+collections:
+  sections:
+plugins:
+- jekyll-toc

@@ -1,0 +1,35 @@
+---
+toc: true
+---
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Coding standarts</title>
+  </head>
+  <body>
+
+    <p><a href="https://github.com/toshimaru/jekyll-toc">toshimaru/jekyll-toc</a></p>
+    {% toc %}
+
+    <p><a href="https://github.com/allejo/jekyll-toc">allejo/jekyll-toc</a></p>
+    {% include toc.html html=content %}
+    
+    <p><a href="https://github.com/gfranko/jquery.tocify.js">jquery.tocify</a></p>
+    <div id="toc"></div>
+    
+    <h1>Coding standarts</h1>
+    {% for section in site.sections %}
+      {{ section.content | markdownify }}
+    {% endfor %}
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+      $("#toc").tocify();
+    });
+    </script>
+  </body>
+</html>
